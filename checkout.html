@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | YM Foodies</title>
+
+<link rel="stylesheet" href="css/checkout.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h2>YM Foodies Checkout</h2>
+
+<a href="cart.html">← Back to Cart</a>
+
+</header>
+
+
+<section class="checkout-container">
+
+<h3>Customer Information</h3>
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="text" id="phone" placeholder="Phone Number" required>
+
+<input type="text" id="address" placeholder="Complete Address" required>
+
+
+<h3>Delivery Area</h3>
+
+<select id="dropside" onchange="calculateTotal()">
+
+<option value="">Select Area</option>
+
+<option value="Pagadoin">Pagadoin</option>
+<option value="Labangan">Labangan</option>
+<option value="Tukuran">Tukuran</option>
+
+</select>
+
+
+<h3>Order Summary</h3>
+
+<div class="summary">
+
+<p>Subtotal: ₱ <span id="subtotal">0</span></p>
+
+<p>Delivery Fee: ₱ <span id="delivery">0</span></p>
+
+<h3>Total: ₱ <span id="total">0</span></h3>
+
+</div>
+
+
+<h3>Payment Method</h3>
+
+<div class="payment">
+
+<p>GCash</p>
+
+<p><strong>09918628025</strong></p>
+
+</div>
+
+
+<h3>Upload Payment Screenshot</h3>
+
+<input type="file" id="paymentProof">
+
+
+<button onclick="placeOrder()" class="order-btn">
+
+Place Order
+
+</button>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 YM Foodies</p>
+
+</footer>
+
+
+<!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-storage.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/order.js"></script>
+
+</body>
+</html>
