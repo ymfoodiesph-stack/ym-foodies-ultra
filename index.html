@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YM Foodies</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="logo">
+<h2>YM Foodies</h2>
+</div>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart</a>
+<a href="checkout.html">Checkout</a>
+
+</nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Delicious Homemade Food</h1>
+
+<p>
+Order your favorite pastel and pastries online
+and get them delivered fast.
+</p>
+
+<a href="menu.html" class="btn-order">Order Now</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="assets/food/pastel.jpg" alt="Chicken Pastel">
+
+</div>
+
+</section>
+
+
+<!-- FEATURED PRODUCTS -->
+
+<section class="featured">
+
+<h2>Featured Menu</h2>
+
+<div class="food-grid" id="menu">
+
+<!-- Products load here from Firebase -->
+
+</div>
+
+</section>
+
+
+<!-- DELIVERY AREAS -->
+
+<section class="delivery">
+
+<h2>Delivery Areas</h2>
+
+<ul>
+
+<li>Pagadoin</li>
+<li>Labangan</li>
+<li>Tukuran</li>
+
+</ul>
+
+</section>
+
+
+<!-- PAYMENT -->
+
+<section class="payment">
+
+<h2>Payment Method</h2>
+
+<p>GCash</p>
+
+<p><strong>09918628025</strong></p>
+
+</section>
+
+
+<!-- MESSENGER SUPPORT -->
+
+<section class="support">
+
+<h2>Need Help?</h2>
+
+<a href="https://m.me/1053675711156954" class="messenger">
+
+Chat with us on Messenger
+
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 YM Foodies</p>
+
+</footer>
+
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+
+<script src="js/firebase.js"></script>
+<script src="js/products.js"></script>
+
+</body>
+
+</html>
