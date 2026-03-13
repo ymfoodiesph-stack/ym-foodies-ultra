@@ -1,40 +1,24 @@
-// js/checkout.js
-
 const checkoutForm = document.getElementById("checkout-form");
+if(checkoutForm){
+  checkoutForm.addEventListener("submit", async e => {
+    e.preventDefault();
+    const customerName = document.getElementById("customerName").value;
+    const contact = document.getElementById("contact").value;
+    const address = document.getElementById("address").value;
+    const items = JSON.parse(localStorage.getItem("ymCart")) || [];
+    const total = items.reduce((a,i)=>a+i.price*i.qty,0);
 
-async function submitOrder(e) {
-  e.preventDefault();
+    if(items.length===0){ alert("Cart empty!"); return; }
 
-  const customerName = document.getElementById("customerName").value;
-  const contact = document.getElementById("contact").value;
-  const address = document.getElementById("address").value;
-
-  let cartItems = JSON.parse(localStorage.getItem("ymCart")) || [];
-  if (cartItems.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-
-  const total = cartItems.reduce((acc, item) => acc + item.price * item.qty, 0);
-
-  const orderData = {
-    customerName,
-    contact,
-    address,
-    items: cartItems,
-    total,
-  };
-
-  try {
-    const response = await fetch(SCRIPT_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ action: "createOrder", data: orderData })
-    });
-
-    const result = await response.json();
-    if (result.success) {
-      localStorage.removeItem("ymCart"); // Clear cart
+    const payload = { action:"createOrder", data:{customerName,contact,address,items,total} };
+    try{
+      const res = await fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const result = await res.json();
+      if(result.success){ localStorage.removeItem("ymCart"); window.location.href="order-success.html"; }
+      else alert("Order failed, try again.");
+    } catch(err){ console.error(err); alert("Error placing order."); }
+  });
+}      localStorage.removeItem("ymCart"); // Clear cart
       window.location.href = "order-success.html";
     } else {
       alert("Failed to place order. Try again.");
