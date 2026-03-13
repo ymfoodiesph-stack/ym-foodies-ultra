@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/.../exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVc1iJiHINFlkjIVKajw6vlRSg3b_K1bzFu3hII2-G5dDM7GyG7gcWf2i95aEaizlokg/exec";
 
 async function loadProducts() {
   try {
