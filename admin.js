@@ -2,7 +2,7 @@ async function loadAdminData() {
   const table = document.getElementById("orders-table-body");
   if(!table) return;
   try{
-    const res = await fetch(`${SCRIPT_URL}?action=orders`);
+    const res = await fetch(`${https://script.google.com/macros/s/AKfycbwVc1iJiHINFlkjIVKajw6vlRSg3b_K1bzFu3hII2-G5dDM7GyG7gcWf2i95aEaizlokg/exec}?action=orders`);
     const orders = await res.json();
 
     document.getElementById("total-orders").innerText = orders.length;
