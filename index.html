@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YM Foodies Ultra</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/logo.png" type="image/png">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+
+  <!-- Page-specific styles -->
+  <!-- index.html usually uses shared styles only -->
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo.png" alt="YM Foodies Logo" width="120">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="admin/dashboard.html">Admin</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to YM Foodies Ultra!</h1>
+      <p>Delicious food delivered straight to your door 🍔🍕🍗</p>
+      <a href="menu.html" class="btn">Order Now</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/hero.jpg" alt="Delicious Food">
+    </div>
+  </section>
+
+  <!-- Menu Preview Section -->
+  <section id="menu-preview">
+    <h2>Our Popular Menu</h2>
+    <div id="menu-container" class="menu-grid">
+      <!-- Products will be loaded here dynamically by main.js -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 YM Foodies Ultra. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>
