@@ -12,7 +12,7 @@ if(checkoutForm){
 
     const payload = { action:"createOrder", data:{customerName,contact,address,items,total} };
     try{
-      const res = await fetch(SCRIPT_URL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+      const res = await fetch("https://script.google.com/macros/s/AKfycbwVc1iJiHINFlkjIVKajw6vlRSg3b_K1bzFu3hII2-G5dDM7GyG7gcWf2i95aEaizlokg/exec,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
       const result = await res.json();
       if(result.success){ localStorage.removeItem("ymCart"); window.location.href="order-success.html"; }
       else alert("Order failed, try again.");
